@@ -1,0 +1,153 @@
+nav input#menu-toggle {
+    display: none;
+  }
+  header {
+    display:flex;
+    border-bottom: 0.5rem solid #0000;
+    margin-bottom: 30px;
+}
+header picture img {
+    height: 5rem;
+}
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+nav ul li {
+    margin: 0 1.5rem;
+}
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--white);
+}
+main{
+    min-height: 70vh;
+}
+footer {
+    background-color: #0000;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin: none;
+}
+.content {
+  width: 100%;
+  max-width: 1370px;
+  margin: 0 auto;
+}
+  @media (max-width: 575px) {
+    nav {
+      position: fixed;
+      margin-top: 1rem;
+    }
+    nav ul {
+      display: none;
+      background-color: var(--white);
+    }
+    nav ul li {
+      text-align: left;
+      margin: 1rem;
+    }
+    nav label[for="menu-toggle"] {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    nav label[for="menu-toggle"] div.menu-hamburger {
+      border: 1px solid var(--white);
+      width: 35px;
+      height: 15px;
+      margin: 15px 2px 5px 5px;
+      cursor: pointer;
+    }
+    nav label[for="menu-toggle"] div.menu-hamburger span.hamburger {
+      position: relative;
+      display: block;
+      background-color: black;
+      width: 30px;
+      height: 2px;
+    }
+    nav label[for="menu-toggle"] div.menu-hamburger span.hamburger:before,
+    nav label[for="menu-toggle"] div.menu-hamburger span.hamburger:after {
+      position: absolute;
+      display: block;
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      content: "";
+    }
+    nav label[for="menu-toggle"] div.menu-hamburger span.hamburger:before {
+      top: -10px;
+    }
+    nav label[for="menu-toggle"] div.menu-hamburger span.hamburger:after {
+      bottom: -10px;
+    }
+    nav input:checked ~ ul {
+      display: block;
+      animation: fade-in 1s;
+    }
+  
+    header
+      nav
+      input:checked
+      ~ label[for="menu-toggle"]
+      div.menu-hamburger
+      span.hamburger {
+      transform: rotate(45deg);
+      transition: 0.5s;
+    }
+    header
+      nav
+      input:checked
+      ~ label[for="menu-toggle"]
+      div.menu-hamburger
+      span.hamburger:before,
+    header
+      nav
+      input:checked
+      ~ label[for="menu-toggle"]
+      div.menu-hamburger
+      span.hamburger:after {
+      transform: rotate(90deg);
+      transition: 0.5s;
+    }
+    header
+      nav
+      input:checked
+      ~ label[for="menu-toggle"]
+      div.menu-hamburger
+      span.hamburger:before {
+      top: 0px;
+    }
+    header
+      nav
+      input:checked
+      ~ label[for="menu-toggle"]
+      div.menu-hamburger
+      span.hamburger:after {
+      bottom: 0px;
+    }
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes fade-out {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
